@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/darkroomjs/build/css/darkroom.min.css" rel="stylesheet">
+    <link href="modules/photos/photos.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+  </head>
+  <body ng-app="receipts">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <ion-nav-view></ion-nav-view>
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- // <script src="cordova.js"></script> -->
+
+    <!-- 3rd party -->
+    <script src="lib/fabric/dist/all.min.js"></script>
+    <script src="lib/darkroomjs/build/js/darkroom.min.js"></script>
+
+    <!-- local -->
+    <script src="app.js"></script>
+    
+    <script src="modules/entries/entries.routes.js"></script>
+    <script src="modules/entries/list-receipts.controller.js"></script>
+    <script src="modules/entries/receipt.controller.js"></script>
+    <script src="modules/entries/receipts.resource.js"></script>
+
+    <script src="modules/photos/darkroom.plugins.js"></script>
+    <script src="modules/photos/edit-photo.controller.js"></script>
+    <script src="modules/photos/photos.routes.js"></script>
+
+    <script src="modules/stats/stats.controller.js"></script>
+    <script src="modules/stats/stats.routes.js"></script>
+  </body>
+</html>

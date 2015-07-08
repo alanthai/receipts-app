@@ -1,0 +1,21 @@
+/* Empty. Add your own CSS if you like */
+
+.darkroom-toolbar {
+	top: auto;
+	bottom: -45px;
+}
+
+.darkroom-toolbar:before {
+	content: normal;
+}
+
+.darkroom-brightness-control {
+	background-color: #444;
+	border-top: 1px solid #777;
+	padding: 8px 8px 4px;
+}
+
+.darkroom-brightness-control > label {
+	color: white;
+	font-weight: bold;
+}
