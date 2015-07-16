@@ -1,32 +1,48 @@
 angular.module('receipts')
   .factory('Receipts', function() {
-    // Might use a resource here that returns a JSON array
+    function randomBetween(min, max) {
+      return Math.floor(Math.random() * max) + min;
+    }
 
-    // Some fake testing data
+    function generateRandomDate() {
+      var date = new Date(2015, 2);
+      date.setDate(randomBetween(0, 3));
+      return date.toISOString();
+    }
+
+    function generateRandomPrice() {
+      return randomBetween(10, 100)/10
+    }
+
     var receipts = [{
       id: 0,
-      name: 'Ben Sparrow',
-      lastText: 'You on your way?',
+      store: 'Walmart',
+      total: generateRandomPrice(),
+      timestamp: generateRandomDate(),
       face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
     }, {
       id: 1,
-      name: 'Max Lynx',
-      lastText: 'Hey, it\'s me',
+      store: 'Loblaws',
+      total: generateRandomPrice(),
+      timestamp: generateRandomDate(),
       face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
     },{
       id: 2,
-      name: 'Adam Bradleyson',
-      lastText: 'I should buy a boat',
+      store: 'Walgreens',
+      total: generateRandomPrice(),
+      timestamp: generateRandomDate(),
       face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
     }, {
       id: 3,
-      name: 'Perry Governor',
-      lastText: 'Look at my mukluks!',
+      store: 'Pizza Pizza',
+      total: generateRandomPrice(),
+      timestamp: generateRandomDate(),
       face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
     }, {
       id: 4,
-      name: 'Mike Harrington',
-      lastText: 'This is wicked good ice cream.',
+      store: 'Chuckie Cheese',
+      total: generateRandomPrice(),
+      timestamp: generateRandomDate(),
       face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
     }];
 
@@ -37,10 +53,10 @@ angular.module('receipts')
       remove: function(receipt) {
         receipts.splice(receipts.indexOf(receipt), 1);
       },
-      get: function(chatId) {
-        for (var i = 0; i < chats.length; i++) {
-          if (chats[i].id === parseInt(chatId)) {
-            return chats[i];
+      get: function(receiptId) {
+        for (var i = 0; i < receipts.length; i++) {
+          if (receipts[i].id === parseInt(receiptId)) {
+            return receipts[i];
           }
         }
         return null;

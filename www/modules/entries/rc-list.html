@@ -1,0 +1,26 @@
+<ion-list>
+  <ion-item
+    class="item-divider"
+    ng-repeat-start="(date, items) in listCtrl.sortedList"
+  >
+    {{date}}
+  </ion-item>
+
+  <ion-item
+      class="item-remove-animate item-avatar item-icon-right"
+      ng-repeat="item in items"
+      type="item-text-wrap"
+      href="#/tab/entries/{{item.id}}"
+  >
+    <img ng-src="{{item.face}}">
+    <h2>{{item.store}}</h2>
+    <p>{{item.total | currency:"$"}}</p>
+    <i class="icon ion-chevron-right icon-accessory"></i>
+
+    <ion-option-button class="button-assertive" ng-click="remove(item)">
+      Delete
+    </ion-option-button>
+  </ion-item>
+
+  <div ng-repeat-end></div>
+</ion-list>
